@@ -51,7 +51,7 @@ public class RSSignatureCaptureView extends View {
 	private Canvas mSignatureBitmapCanvas = null;
 	private SignatureCallback callback;
 	private boolean dragged = false;
-	private int SCROLL_THRESHOLD = 50;
+	private int SCROLL_THRESHOLD = 0;
 
 	public interface SignatureCallback {
 		void onDragged();
@@ -68,10 +68,10 @@ public class RSSignatureCaptureView extends View {
 		mPaint.setStrokeCap(Paint.Cap.ROUND);
 		mPaint.setStrokeJoin(Paint.Join.ROUND);
 
-		mMinWidth = convertDpToPx(8);
-		mMaxWidth = convertDpToPx(16);
+		mMinWidth = convertDpToPx(2);
+		mMaxWidth = convertDpToPx(4);
 		mVelocityFilterWeight = 0.4f;
-		mPaint.setColor(Color.BLACK);
+		mPaint.setColor(Color.GREY);
 
 		//Dirty rectangle to update only the changed portion of the view
 		mDirtyRect = new RectF();
